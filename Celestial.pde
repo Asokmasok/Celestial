@@ -102,7 +102,7 @@ void draw() {
   opencv.loadImage(cam);  // We have to always "load" the camera image into OpenCV 
   faces = opencv.detect();   // Detect the faces
 
-  image(cam, 0, 0);   // Draw the video
+  //image(cam, 0, 0);   // Draw the video
 
   //loadPixels();
   //for ( int x = 0; x < width; x++) {
