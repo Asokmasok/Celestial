@@ -17,7 +17,7 @@ class Face {
 
   Face(float x, float y) {
     position = new PVector(x, y);
-    mass = random(10, 20);
+    mass = random(18, 20);
     G = 0.01;
     dragOffset = new PVector(0.0, 0.0);
     float a = random(0.3, 3);

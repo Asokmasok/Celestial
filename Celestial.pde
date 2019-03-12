@@ -11,7 +11,7 @@ Rectangle[] faces;
 
 ArrayList<BallRed> red = new ArrayList<BallRed>(); 
 ArrayList<BallBlue> blue = new ArrayList<BallBlue>(); 
-Face[] face = new Face[10];
+Face[] face = new Face[5];
 float g = 0.4;
 boolean birth = false;
 
@@ -44,7 +44,7 @@ void setup() {
   font = createFont("minimal-pixel.ttf", 300);
   font1 = createFont("Kiona-Regular.ttf", 300);
 
-  cam = new Capture(this, width/5, height/5);
+  cam = new Capture(this, width/3, height/3);
   //cam = new Capture(this, Capture.list()[2]);
   cam.start();
   opencv = new OpenCV(this, cam.width, cam.height); 
@@ -185,14 +185,14 @@ void draw() {
     text("celestial", width/2, height/2);
   }
 
-  if (total>19 && total<100) {
+  //if (total>19 && total<100) {
 
-    textFont(font1);
-    textSize(30);
-    textAlign(CENTER);
-    fill(255);
-    text(" Doruk Yildirim, Tolga Kalcioglu, Aysel Abasova", width/2, height/1.5);
-  }
+  //  textFont(font1);
+  //  textSize(30);
+  //  textAlign(CENTER);
+  //  fill(255);
+  //  text(" Doruk Yildirim, Tolga Kalcioglu, Aysel Abasova", width/2, height/1.5);
+  //}
 
   for (int b = blue.size() -1; b >= 0; b--) {
     for (int r = red.size() -1; r >= 0; r--) {
@@ -256,8 +256,8 @@ void draw() {
   //if (mousePressed) {
   for (int i = 0; i < faces.length; i++) {
     face[i].display(orbit);
-    face[i].position.x = faces[i].x*5;
-    face[i].position.y = faces[i].y*5;
+    face[i].position.x = faces[i].x*4;
+    face[i].position.y = faces[i].y*4;
     for (int b = blue.size() -1; b >= 0; b--) {
       PVector force = face[i].attract(blue.get(b));
       for (int r = red.size() -1; r >= 0; r--) {
